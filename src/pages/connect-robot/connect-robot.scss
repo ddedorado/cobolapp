@@ -1,0 +1,28 @@
+page-connect-robot {
+	ion-list {
+		display: flex;
+		flex-flow: column nowrap;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.robot-container {
+		.robot-item {
+			color: $white;
+			height: 8em;
+
+			&.selected {
+				background-color: $white;
+				color: $black;
+			}
+
+			.button-inner {
+				flex-flow: column nowrap;
+			}
+
+			ion-icon {
+				font-size: 3em;
+			}
+		}
+	}
+}

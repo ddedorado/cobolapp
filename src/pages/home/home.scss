@@ -1,0 +1,43 @@
+page-home {
+	.card-background-page {
+
+	  ion-card {
+	    position: relative;
+	    text-align: center;
+	    color: $white;
+
+	    &.stop {
+	    	background-color: $red;
+
+	    }
+
+    	ion-icon {
+    		font-size: 10.0em;
+    	}
+
+	  	.card-title {
+		    font-size: 2.0em;
+		    width: 100%;
+		    font-weight: bold;
+		    color: $white;
+	  	}
+
+	  	.card-subtitle {
+		    font-size: 1.0em;
+		    width: 100%;
+		    color: $white;
+	  	}
+	  }
+	}
+
+	.status-bar {
+		ion-col {
+			display: flex;
+			flex-direction: column;
+		}
+
+		ion-icon {
+			font-size: 2em;
+		}
+	}
+}

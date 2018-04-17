@@ -1,0 +1,14 @@
+page-load-program {
+	.program-container {
+		.program-item {
+			&.selected {
+				background-color: $white;
+				color: $black;
+			}
+		}
+	}
+}
+
+.action-sheet-group {
+	overflow: auto;
+}
