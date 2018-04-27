@@ -1,0 +1,24 @@
+<!-- Generated template for the CustomBarComponent component -->
+<div class="custom-bar">
+  <h3 margin-top class="custom-bar__title" [hidden]="! this._title ">{{ this._title }}</h3>
+  <div class="custom-bar__subtitle">
+    <span>Operate Any Cobot</span>
+  <div>
+  <div class="custom-bar__robots" [hidden]="! this._robots">
+    <ion-icon name="abb-yumi" color="grey-lighter"></ion-icon>
+  </div>
+  <div class="custom-bar__options" [hidden]="! this._options">
+    <button ion-button clear icon-only (click)="navPage('SaveProgramPage')">
+      <span margin-bottom>Save</span>
+      <ion-icon name="abb-save" color="black" padding-bottom></ion-icon>
+    </button>
+    <button ion-button clear icon-only>
+      <span margin-bottom>Save As</span>
+      <ion-icon name="abb-saveas" color="black" padding-bottom></ion-icon>
+    </button>
+    <button ion-button clear icon-only>
+      <span margin-bottom>Undo</span>
+      <ion-icon name="abb-undo" color="black" padding-bottom></ion-icon>
+    </button>
+  </div> 
+</div>

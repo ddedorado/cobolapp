@@ -1,43 +1,120 @@
 page-home {
+
+	.button-bar {
+
+		button {
+			border-radius: $border-rd;
+			border-bottom: 4px solid;
+			height: 6em;
+			margin-top: 0;
+
+			.button-inner {
+				display: flex;
+		    flex-direction: column;
+		    align-items: center;
+			}
+
+			&[color="green"] {
+				border-color: color($colors, green-secondary);
+			}
+
+			&[color="red"] {
+				border-color: color($colors, red-secondary);
+			}
+
+			&[color="yellow"] {
+				border-color: color($colors, yellow-secondary);
+			}
+
+			&[color="blue"] {
+				border-color: color($colors, blue-secondary);
+			}
+		}
+	}
+
 	.card-background-page {
 
 	  ion-card {
 	    position: relative;
 	    text-align: center;
 	    color: $white;
+	    border-radius: $border-rd;
 
-	    &.stop {
-	    	background-color: $red;
+      height: 28em;
+	    display: flex;
+	    flex-direction: column;
+	    justify-content: flex-end;
 
+	    &.red {
+	    	background-color: color($colors, red);
 	    }
 
     	ion-icon {
     		font-size: 10.0em;
+    		margin-bottom: 70px;
     	}
 
-	  	.card-title {
-		    font-size: 2.0em;
-		    width: 100%;
-		    font-weight: bold;
-		    color: $white;
-	  	}
+			.card-data {
+				background-color: $toolbar-background;
 
-	  	.card-subtitle {
-		    font-size: 1.0em;
-		    width: 100%;
-		    color: $white;
-	  	}
+		  	.card-title {
+			    font-size: 2.0em;
+			    width: 100%;
+			    font-weight: bold;
+			    color: $white;
+		  	}
+
+		  	.card-subtitle {
+			    font-size: 1.0em;
+			    width: 100%;
+			    color: $white;
+		  	}
+			}
 	  }
 	}
 
 	.status-bar {
+
+		.toolbar-background-md { background-color: color($colors, white) }; 
+
+		&__header {
+			background-color: $color-dark-secondary;
+
+			span { 
+				color: color($colors, light); 
+				font-size: 17px;
+			} 
+		}
+		
+		&__info {
+			display: flex;
+			flex-flow: column nowrap;
+			text-align: left;
+
+			&__number {
+				font-size: 28px;
+			} 
+		}
+
 		ion-col {
 			display: flex;
-			flex-direction: column;
+			flex-direction: row;
+			align-items: center;
+			border-right: 1px solid color($colors, grey-lighter);
+			border-bottom: 1px solid color($colors, grey-lighter);
+
+			&:last-child {
+				border-right: 0;
+			}
+
+			ion-icon {
+				//margin-left: 32px;
+			}
 		}
 
 		ion-icon {
-			font-size: 2em;
+			font-size: 3em;
+			padding-left: 5vw;
 		}
 	}
 }

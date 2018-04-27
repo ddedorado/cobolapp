@@ -8,63 +8,74 @@
 <ion-header>
  	<custom-header [title]="this.title"></custom-header>
 </ion-header>
-<ion-content padding>
-
- 	<ion-toolbar no-border-top padding-bottom class="status-bar">
-	 	<div text-center padding>
-	 		<h3 no-margin no-padding>Operational Status</h3>
+<ion-content>
+ 	<ion-toolbar no-border no-padding class="status-bar">
+	 	<div text-center padding class="status-bar__header">
+	 		<span no-margin no-padding>Operational Status</span>
 	 	</div>
-		<ion-grid>
+		<ion-grid no-padding>
 			<ion-row>
-				<ion-col col-3 text-center>
+				<ion-col col-3>
 					<!-- Hours the robot has been in operations -->
-					<ion-icon name="time"></ion-icon>
-					<div margin-top>
-						<ion-badge item-end>260k</ion-badge>
+					<ion-icon name="abb-clock"></ion-icon>
+					<div padding class="status-bar__info">
+						<span>Time since start</span>
+						<span class="status-bar__info__number">0:15:25</span>
+						<span>Hour Min Sec</span>
 					</div>
 				</ion-col>
-				<ion-col col-3 text-center>
+				<ion-col col-3>
 					<!-- Pauses -->
-					<ion-icon name="pause"></ion-icon>
-					<div margin-top>
-						<ion-badge item-end>260k</ion-badge>
+					<ion-icon name="abb-pause"></ion-icon>
+					<div padding class="status-bar__info">
+						<span>Number of pauses</span>
+						<span class="status-bar__info__number">1</span>
 					</div>
 				</ion-col>
-				<ion-col col-3 text-center>
+				<ion-col col-3>
 					<!-- Cycles completed -->
-					<ion-icon name="done-all"></ion-icon>
-					<div margin-top>
-						<ion-badge item-end>260k</ion-badge>
+					<ion-icon name="abb-cycles"></ion-icon>
+					<div padding class="status-bar__info">
+						<span>Number of cycles</span>
+						<span class="status-bar__info__number">1</span>
 					</div>
 				</ion-col>
-				<ion-col col-3 text-center>
+				<ion-col col-3>
 					<!-- Other messages -->
-					<ion-icon name="filing"></ion-icon>
-					<div margin-top>
-						<ion-badge item-end>260k</ion-badge>
+					<ion-icon name="abb-comments"></ion-icon>
+					<div margin class="status-bar__info">
+						<span>Stopped due to collision / Press Continue or Back to Home</span>
 					</div>
 				</ion-col>
 			</ion-row>
 		</ion-grid>
-  	</ion-toolbar>
-	<ion-grid no-margin no-padding >
-		<ion-row no-margin no-padding >
-			<ion-col col-9 no-margin no-padding class="card-background-page">
-		  		<ion-card no-margin class="stop">
-		  			<ion-icon margin-vertical name="print"></ion-icon>
-				    <div margin-vertical class="card-title">Stopped</div>
-				    <div margin-vertical class="card-subtitle">Program 3</div>
+	</ion-toolbar>
+	<ion-grid margin no-padding >
+		<ion-row margin padding >
+			<ion-col col-3>
+				<custom-bar [robots]="true"></custom-bar>
+			</ion-col>
+			<ion-col col-6 no-margin no-padding class="card-background-page">
+		  		<ion-card no-margin class="red">
+		  			<ion-icon margin-top name="abb-yumi"></ion-icon>
+				    <div padding-vertical class="card-data">
+					    <div class="card-title">Stopped</div>
+					    <div margin-top class="card-subtitle">Program 3</div>
+				    </div>
 			  	</ion-card>
 			</ion-col>
-			<ion-col col-3>
-				<button ion-button full large margin-bottom>
-					<ion-icon name="play" margin-right></ion-icon>Start
+			<ion-col col-3 class="button-bar">
+				<button ion-button color="green" full large margin-bottom>
+					<ion-icon name="play" margin-bottom></ion-icon>
+					<span>Start</span>
 				</button>
-				<button ion-button color="danger" full large margin-bottom>
-					<ion-icon name="square" margin-right></ion-icon>Stop
+				<button ion-button color="red" full large margin-bottom>
+					<ion-icon name="square" margin-bottom></ion-icon>
+					<span>Stop</span>
 				</button>
-				<button ion-button color="dark" full large>
-					<ion-icon name="refresh" margin-right></ion-icon>Reset
+				<button ion-button color="blue" full large>
+					<ion-icon name="abb-back" margin-bottom></ion-icon>
+					<span>Reset</span>
 				</button>
 			</ion-col>
 		</ion-row>

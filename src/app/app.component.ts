@@ -35,6 +35,8 @@ export class MyApp {
     { title: 'Home', component: 'HomePage' },
     { title: 'ConnectRobot', component: 'ConnectRobotPage' },
     { title: 'LoadProgram', component: 'LoadProgramPage' },
+    { title: 'SaveProgram', component: 'SaveProgramPage' },
+    { title: 'ManualGuiding', component: 'ManualGuidingPage' },
     { title: 'Tutorial', component: 'TutorialPage' },
     { title: 'Welcome', component: 'WelcomePage' },
     { title: 'Tabs', component: 'TabsPage' },

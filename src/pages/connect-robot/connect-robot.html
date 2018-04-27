@@ -10,7 +10,7 @@
 
 
 <ion-content padding>
-	<form (submit)="doLogin()" [hidden]="isLogged">
+	<!--<form (submit)="doLogin()" [hidden]="isLogged">
 		<ion-list>
 			<ion-item col-6>
 				<ion-label floating>Email</ion-label>
@@ -26,15 +26,25 @@
 				<button full ion-button block>Login</button>
 			</div>
 		</ion-list>
-	</form>
+	</form>-->
 
-	<ion-grid [hidden]="!isLogged" class="robot-container">
+	<ion-grid class="robot-container">
 		<ion-row>
-			<ion-col *ngFor="let robot of this.robots; let ind = index" col-3>
-				<button ion-button color="danger" text-center padding-vertical full large class="robot-item" (click)="selectRobot(ind)" [ngClass]="{'selected':(ind == this.robotSelected)}">
-					<ion-icon margin-bottom [name]="robot.icon"></ion-icon>
-					{{ robot.name }}
-				</button>
+			<ion-col col-3>
+				<custom-bar [title]="title" [robots]="false"></custom-bar>
+			</ion-col>
+			<ion-col col-9>
+				<ion-row>
+					<ion-col *ngFor="let robot of this.robots; let ind = index" col-3>
+						<button ion-button color="white" clear text-center padding-vertical full large class="robot-item" (click)="selectRobot(ind)" [ngClass]="{'selected':(ind == this.robotSelected)}">
+							<ion-icon margin-bottom [name]="robot.icon"></ion-icon>
+							<div class="robot-item__name">
+								{{ robot.name }}
+								<ion-icon name="checkmark" [hidden]="(ind != this.robotSelected)"></ion-icon>
+							</div>
+						</button>
+					</ion-col>
+				</ion-row>
 			</ion-col>
 		</ion-row>
 	</ion-grid>

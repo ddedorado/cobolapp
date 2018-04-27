@@ -13,37 +13,50 @@ import { NavController } from 'ionic-angular';
 })
 export class CustomHeaderComponent {
 
-	_title: string;
+	_title: string = 'Home';
+
+	_home: any = {
+			title: 'Home',
+			icon: 'abb-home',
+			value: 'HomePage'
+	};
+
 	_pages: any	= [
 		{
 			title: 'Connect to robot',
-			icon: 'wifi',
+			icon: 'abb-connect',
 			value: 'ConnectRobotPage'
 		},
 		{
 			title: 'Load Program',
-			icon: 'sync',
+			icon: 'abb-load',
 			value: 'LoadProgramPage'
 		},
 		{
 			title: 'Manual Guiding',
-			icon: 'game-controller-a',
-			value: ''
+			icon: 'abb-manualguiding',
+			value: 'ManualGuidingPage'
 		},
 		{
 			title: 'Modify Skills',
-			icon: 'options',
+			icon: 'abb-modifyskill',
 			value: ''
 		}
 	];
 
-  	constructor(public navCtrl: NavController) {
-    	console.log( 'Hello HeaderComponent Component' );
-  	}
+	constructor(public navCtrl: NavController) {
+  	console.log( 'Hello HeaderComponent Component' );
+	}
 
 	navPage ( page ) {
-		this.navCtrl.push( page )
+
+		this.navCtrl.push( page );
 	}
+
+	ionViewCanLeave(): boolean {
+
+     return true;
+  }
 
 	@Input()
 	set title ( title: string ) {

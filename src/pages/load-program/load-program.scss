@@ -1,9 +1,11 @@
 page-load-program {
 	.program-container {
 		.program-item {
+      border-radius: $border-rd;
+      
 			&.selected {
-				background-color: $white;
-				color: $black;
+				background-color: color($colors, yellow);
+				color: color($colors, black);
 			}
 		}
 	}

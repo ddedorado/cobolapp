@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 
-import { User } from '../../providers/providers';
-//import { MainPage } from '../pages';
+//import { User } from '../../providers/providers';
 
 /**
  * Generated class for the ConnectRobotPage page.
@@ -18,56 +17,26 @@ import { User } from '../../providers/providers';
 })
 export class ConnectRobotPage {
 
-	title: string = 'Connect to Robot';
+	title: string = 'Connect to robot';
 	
 	account: { email: string, password: string } = {
 		email: 'test@example.com',
 		password: 'test'
 	};
 
-	isLogged: boolean = false;
+	//isLogged: boolean = false;
 
 	robotSelected: any;
 
 	robots = [
 		{
-			name: 'Robot 1',
-			icon: 'car',
+			name: 'YuMi',
+			icon: 'abb-yumi',
 			type: 'one-arm'
 		},
 		{
-			name: 'Robot 2',
-			icon: 'bus',
-			type: 'two-arms'
-		},
-		{
-			name: 'Robot 3',
-			icon: 'boat',
-			type: 'one-arm'
-		},
-		{
-			name: 'Robot 4',
-			icon: 'bicycle',
-			type: 'two-arms'
-		},
-		{
-			name: 'Robot 5',
-			icon: 'car',
-			type: 'one-arm'
-		},
-		{
-			name: 'Robot 6',
-			icon: 'bus',
-			type: 'two-arms'
-		},
-		{
-			name: 'Robot 7',
-			icon: 'boat',
-			type: 'one-arm'
-		},
-		{
-			name: 'Robot 8',
-			icon: 'bicycle',
+			name: 'YuMi 2',
+			icon: 'abb-yumi',
 			type: 'two-arms'
 		}
 	]    
@@ -75,12 +44,12 @@ export class ConnectRobotPage {
 	constructor(
 		public navCtrl: NavController, 
 		public navParams: NavParams,
-		public user: User,
+		// public user: User,
 		public toastCtrl: ToastController ) {
 			console.log(this.account)
 	}
-
-	doLogin() {
+ 
+	/*doLogin() {
 
 		this.user.login( this.account ).subscribe( ( resp ) => {
 
@@ -95,9 +64,9 @@ export class ConnectRobotPage {
 			this.showToast( err.message );
 	  		this.isLogged = true;
 		} );
-	}
+	}*/
 
-	showToast( msg ) {
+	/*showToast( msg ) {
 
 		let toast = this.toastCtrl.create( {
 			message: msg,
@@ -106,7 +75,7 @@ export class ConnectRobotPage {
 		} );
 
   		toast.present();
-	}
+	}*/
 
 	selectRobot( key ) {
 		

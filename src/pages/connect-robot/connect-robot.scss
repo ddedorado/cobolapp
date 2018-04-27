@@ -8,8 +8,12 @@ page-connect-robot {
 
 	.robot-container {
 		.robot-item {
-			color: $white;
-			height: 8em;
+			color: color($colors, grey);
+			height: 10em;
+
+			&:hover {
+				color: color($colors, grey); 
+			}
 
 			&.selected {
 				background-color: $white;
@@ -18,10 +22,21 @@ page-connect-robot {
 
 			.button-inner {
 				flex-flow: column nowrap;
+				position: relative;
+
+				.robot-item__name {
+					position: absolute;
+    			bottom: 10px;
+
+    			ion-icon {
+    				font-size: 1em;
+    				color: color($colors, secondary);
+    			}
+				}
 			}
 
 			ion-icon {
-				font-size: 3em;
+				font-size: 5em;
 			}
 		}
 	}

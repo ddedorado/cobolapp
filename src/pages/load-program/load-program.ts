@@ -46,49 +46,16 @@ export class LoadProgramPage {
 		}
 	]    
 
-  	constructor(public navCtrl: NavController, public navParams: NavParams, public actionSheetCtrl: ActionSheetController) {
-  		console.log(this.programs);
-  	}
+	constructor(public navCtrl: NavController, public navParams: NavParams, public actionSheetCtrl: ActionSheetController) {
+		console.log(this.programs);
+	}
 
 	selectProgram( key ) {
 		
 		this.programSelected = ( key != this.programSelected ) ? key : -1;
 	}
 
-	openActionSheet( program, ind ) {
-
-	    let actionSheet = this.actionSheetCtrl.create({
-	      title: 'Modify your program',
-	      buttons: [
-	        {
-	          text: 'Delete',
-	          role: 'destructive',
-	          icon: 'trash',
-	          handler: () => {
-	          	
-	          	if ( this.programSelected == ind ) {
-					
-					this.programSelected = -1;
-	          	}
-
-    			this.programs.splice(ind, 1);
-
-	          }
-	        },
-	        {
-	          text: 'Cancel',
-	          role: 'cancel',
-	          icon: 'arrow-back',
-	          handler: () => {
-	            console.log('Cancel clicked');
-	          }
-	        }
-	      ]
-	    });
-	    actionSheet.present();
-	  }
-
-  	ionViewDidLoad() {
-    	console.log('ionViewDidLoad LoadProgramPage');
-  	}
+	ionViewDidLoad() {
+  	console.log('ionViewDidLoad LoadProgramPage');
+	}
 }

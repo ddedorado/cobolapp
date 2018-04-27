@@ -1,8 +1,12 @@
-<ion-navbar>
-	<ion-title>{{ this._title }}</ion-title>
+<ion-navbar hideBackButton >
+	<ion-title (click)="navPage(this._home.value)">
+    <button ion-button padding-right clear color="light" [ngClass]="{'selected':( this._home.title == this._title )}">
+      <ion-icon padding-right name="abb-home"></ion-icon>{{ this._home.title }}
+    </button>
+  </ion-title>
 	<ion-buttons end>
-		<button ion-button icon-only padding-right clear color="dark" *ngFor="let page of this._pages" (click)="navPage(page.value)">
-			<ion-icon [name]="page.icon"></ion-icon>{{page.title}}
+		<button ion-button padding-right clear color="light" *ngFor="let page of this._pages" (click)="navPage(page.value)" [ngClass]="{'selected':(page.title == this._title)}">
+			<ion-icon [name]="page.icon" padding-right></ion-icon>{{page.title}}
 		</button>
 	</ion-buttons>
 </ion-navbar>

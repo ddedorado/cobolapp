@@ -11,11 +11,18 @@
 <ion-content padding>
 	<ion-grid class="program-container">
 		<ion-row>
-			<ion-col *ngFor="let program of this.programs; let ind = index" col-3>
-				<button ion-button text-center full large round class="program-item" (click)="selectProgram(ind)" (press)="openActionSheet(program, ind)" [ngClass]="{'selected':(ind == this.programSelected)}">
-					{{ program.name }}
-				</button>
-			</ion-col>
-		</ion-row>
+      <ion-col col-3>
+        <custom-bar [title]="this.title" [options]="true"></custom-bar>
+      </ion-col>
+      <ion-col col-9>
+        <ion-row>
+    			<ion-col *ngFor="let program of this.programs; let ind = index" col-4 padding-horizontal margin-bottom>
+    				<button ion-button text-center full large color="blue" class="program-item" (click)="selectProgram(ind)" [ngClass]="{'selected':(ind == this.programSelected)}">
+    					{{ program.name }}
+    				</button>
+    			</ion-col>
+		    </ion-row>
+      </ion-col>
+    </ion-row>
 	</ion-grid>
 </ion-content>

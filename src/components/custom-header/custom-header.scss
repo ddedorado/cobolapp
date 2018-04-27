@@ -1,3 +1,10 @@
 custom-header {
 
+  ion-icon {
+    margin-top: -2px;
+  }
+  
+  .selected ion-icon {
+    color: $color-selected;
+  }
 }
