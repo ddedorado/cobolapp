@@ -1,13 +1,12 @@
 <!-- Header -->
 <div class="mg-container">
   <div text-center margin-bottom class="mg-container__title">
-    <ion-icon margin-right [name]="this._positions[this._type].icon" [hidden]="this._type == 'right'"></ion-icon>
+    <ion-icon margin-right [name]="this._icons[0]" [hidden]="this._type == 'right'"></ion-icon>
     <span>{{ this._positions[this._type].title }}</span>
-    <ion-icon margin-left [name]="this._positions[this._type].icon" [hidden]="this._type == 'left'"></ion-icon>
+    <ion-icon margin-left [name]="this._icons[1]" [hidden]="this._type == 'left'"></ion-icon>
   </div>
 
   <!-- Top Buttons -->
-
   <ion-row class="positions-container">
     <button ion-button margin-bottom [color]="_startColor" (click)="setStartPosition()">Start Position</button>
     <button ion-button margin-bottom color="blue">Open Gripper</button>

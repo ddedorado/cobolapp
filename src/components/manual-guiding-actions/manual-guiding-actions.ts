@@ -17,17 +17,18 @@ export class ManualGuidingActionsComponent {
   _actions: any = [];
   _startColor: string = 'blue';   
   _endColor: string = 'blue';
+  _icons: any = [
+    'abb-left',
+    'abb-right'
+  ];
   _positions: any = {
     left: {
-      icon: 'abb-left',
       title: 'Move Left Arm'
     },
     right: {
-      icon: 'abb-right',
       title: 'Move Right Arm'
     },
     both: {
-      icon: 'abb-left',
       title: 'Move Both Arm'
     }
   };

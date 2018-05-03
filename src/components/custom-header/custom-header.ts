@@ -41,12 +41,12 @@ export class CustomHeaderComponent {
 			title: 'Manual Guiding',
 			icon: 'abb-manualguiding',
 			value: 'ManualGuidingPage'
-		},
-		{
+		}
+		/*{
 			title: 'Modify Skills',
 			icon: 'abb-modifyskill',
 			value: ''
-		}
+		}*/
 	];
 
 	constructor(public navCtrl: NavController) {
