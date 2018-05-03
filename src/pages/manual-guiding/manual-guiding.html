@@ -3,28 +3,43 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-grid class="program-container">
+  <ion-grid>
     <ion-row>
       <ion-col col-3>
-        <custom-bar [title]="this.title" [options]="true"></custom-bar>
+        <custom-bar [title]="this.title" [options]="true" [mgoptions]="true" [comments]="true"></custom-bar>
       </ion-col>
       <ion-col col-9>
-          <div class="mg-container">
-            <button ion-button margin-bottom color="blue" full>Start Position</button>
-            <button ion-button margin-bottom color="orange" full>Add New Position</button>
-            <div>
-              <button *ngFor="let position of this.positions; let ind = index" ion-button margin-bottom color="blue">Position {{ind + 1}}</button>
+
+        <ion-segment [(ngModel)]="this.arms" color="dark" >
+          <ion-segment-button value="separated">
+            Move each arm separately
+          </ion-segment-button>
+          <ion-segment-button value="both">
+            Syncronizhed movements of two arms
+          </ion-segment-button>
+        </ion-segment>
+
+        <div [ngSwitch]="this.arms">
+      
+          <ion-item *ngSwitchCase="'separated'">
+            <ion-row class="mg-container">
+              <ion-col col-6>
+                <manual-guiding-actions type="left"></manual-guiding-actions>
+              </ion-col>
+
+              <ion-col col-6>
+                <manual-guiding-actions type="right"></manual-guiding-actions>
+              </ion-col>
+            </ion-row>
+          </ion-item >
+
+          <ion-item *ngSwitchCase="'both'">
+            <div class="mg-container" offset-3 col-5>
+              <manual-guiding-actions type="both"></manual-guiding-actions>
             </div>
-            <button ion-button margin-bottom color="orange" full>Set End Position</button>
-            <div>
-              <button ion-button large color="green">
-                <ion-icon name="play"></ion-icon>Play
-              </button>
-              <button ion-button large color="green">
-                <ion-icon name="skip-forward"></ion-icon>Step Through
-              </button>
-            </div>
-          </div>
+          </ion-item >
+          
+        </div>
       </ion-col>
     </ion-row>
   </ion-grid>

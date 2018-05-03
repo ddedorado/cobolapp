@@ -22,7 +22,29 @@ custom-bar {
       margin-top: 30px;
     }
 
-    &__options {
+    &__comments {
+      background-color: color($colors, grey-lighter);
+      border-radius: $border-rd;
+      font-size: 16px;
+      color: color($colors, white);
+      position: relative;
+
+      &:before {
+        content: "";
+        width: 0;
+        height: 0;
+        border-left: 30px solid transparent;
+        //border-right: 20px solid #f00;
+        border-top: 30px solid transparent;
+        border-bottom: 30px solid color($colors, grey-lighter);
+        position: absolute;
+        right: 0;
+        top: -45px;
+      }
+    }
+
+    &__options,
+    &__mgoptions {
 
       button {
         color: color($colors, black);

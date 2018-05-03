@@ -16,6 +16,8 @@ export class CustomBarComponent {
   _title: string = '';
   _robots: boolean = false;
   _options: boolean = false;
+  _mgoptions: boolean = false;
+  _comments: boolean = false;
 
   constructor( public navCtrl: NavController ) {
     console.log('Hello CustomBarComponent Component');
@@ -51,5 +53,23 @@ export class CustomBarComponent {
 
   get options () {
     return this._options;
+  }
+
+  @Input()
+  set mgoptions ( mgoptions: boolean ) {
+    this._mgoptions = mgoptions;
+  }
+
+  get mgoptions () {
+    return this._mgoptions;
+  }
+
+  @Input()
+  set comments ( comments: boolean ) {
+    this._comments = comments;
+  }
+
+  get comments () {
+    return this._comments;
   }
 }

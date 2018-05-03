@@ -23,6 +23,11 @@ export class CustomHeaderComponent {
 
 	_pages: any	= [
 		{
+			title: 'Error Reset',
+			icon: 'abb-reset',
+			value: 'HomePage'
+		},
+		{
 			title: 'Connect to robot',
 			icon: 'abb-connect',
 			value: 'ConnectRobotPage'

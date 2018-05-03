@@ -1,0 +1,58 @@
+manual-guiding-actions {
+  .mg-container {
+
+    &__title {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+
+      span {
+        font-size: 1.5em;
+      }
+      
+      ion-icon {
+        font-size: 2.6em;
+      }
+    }
+
+    &__btn-container {
+      display:flex;
+      flex-direction: column;
+    }
+
+    button {
+      border-radius: $border-rd;
+
+      &.mg-green {
+        height: 4em;
+        width: 49%;
+        margin-top: 0;
+
+        .button-inner {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+      }
+    }
+  }
+
+  .positions-container {
+    display: inline-block;
+    width: 100%;
+    float: left;
+    
+    button {
+      float: left;
+      width: calc(49% - 0px);
+      margin-right: 0px;
+
+      &:nth-child(even) {
+        float: right;
+        margin-left: 0px;
+        margin-right: 0;
+      }
+    }
+  }
+}

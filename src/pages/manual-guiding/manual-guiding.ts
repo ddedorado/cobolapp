@@ -16,23 +16,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 export class ManualGuidingPage {
 
   title: string = 'Manual Guiding';
-  positions: any = [
-    {
-      id: 1111
-    },
-    {
-      id: 1112
-    },
-    {
-      id: 1113
-    },
-    {
-      id: 1114
-    },
-    {
-      id: 1115
-    }
-  ];
+  arms: string = "separated";
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
@@ -40,5 +24,4 @@ export class ManualGuidingPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad ManualGuidingPage');
   }
-
 }

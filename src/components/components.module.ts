@@ -3,16 +3,19 @@ import { CommonModule } from '@angular/common';
 import { CustomHeaderComponent } from './custom-header/custom-header';
 import { CustomBarComponent } from './custom-bar/custom-bar';
 import { IonicModule } from "ionic-angular";
+import { ManualGuidingActionsComponent } from './manual-guiding-actions/manual-guiding-actions';
 
 @NgModule({
 	declarations: [ 
     CustomHeaderComponent,
-    CustomBarComponent 
+    CustomBarComponent,
+    ManualGuidingActionsComponent 
   ],
 	imports: [ CommonModule, IonicModule ],
 	exports: [ 
     CustomHeaderComponent,
-    CustomBarComponent
+    CustomBarComponent,
+    ManualGuidingActionsComponent
   ],
 	schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
 })

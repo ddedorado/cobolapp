@@ -1,0 +1,38 @@
+<!-- Header -->
+<div class="mg-container">
+  <div text-center margin-bottom class="mg-container__title">
+    <ion-icon margin-right [name]="this._positions[this._type].icon" [hidden]="this._type == 'right'"></ion-icon>
+    <span>{{ this._positions[this._type].title }}</span>
+    <ion-icon margin-left [name]="this._positions[this._type].icon" [hidden]="this._type == 'left'"></ion-icon>
+  </div>
+
+  <!-- Top Buttons -->
+
+  <ion-row class="positions-container">
+    <button ion-button margin-bottom [color]="_startColor" (click)="setStartPosition()">Start Position</button>
+    <button ion-button margin-bottom color="blue">Open Gripper</button>
+    <button ion-button color="blue" (click)="addAction(this._actions.length)" [disabled]="this._actions.length >= this._limitActions" >Add New Position</button>      
+    <button ion-button color="blue">Close Gripper</button>
+  </ion-row>
+
+  <!-- Actions -->
+  <div class="positions-container" margin-bottom>
+    <button *ngFor="let action of this._actions; let ind = index" ion-button no-margin margin-top no-padding color="blue">Action {{ind + 1}}</button>
+  </div>
+
+  <!-- Bottoms Buttons -->
+  <div margin-vertical>
+    <button ion-button [color]="_endColor" full (click)="setEndPosition()">Set End Position</button>
+  </div>
+
+  <ion-row>
+    <ion-col offset-3 col-6 no-padding text-center>
+      <button class="mg-green" ion-button color="green" margin-bottom icon-only>
+        <ion-icon name="play"></ion-icon>
+      </button>
+      <button class="mg-green" ion-button color="green" margin-bottom icon-only>
+        <ion-icon name="skip-forward"></ion-icon>
+      </button>
+    </ion-col>
+  </ion-row>
+</div>
